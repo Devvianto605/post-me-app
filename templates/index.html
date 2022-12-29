@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>POST ME</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>POST ME</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Post anything!</h2>
+                    <form action="/" method="post">
+                        <input name="name" placeholder="name" type="text">
+                        <input name="post" placeholder="message" type="text">
+                        <input type="submit" value="Add Post">
+                    </form>
+            </div>
+            </div>
+        </div>
+
+            <div class="section">
+
+                <h2>All posts</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="200px" >Name</th>
+                            <th>Post</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                            <tr>
+                                <td>{{post.name}}</td>
+                                <td>{{post.post}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
